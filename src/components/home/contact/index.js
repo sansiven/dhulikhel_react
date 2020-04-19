@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Maps from './Maps'
+import Maps from './Maps';
+import MessageUs from './MessageUs';
 
 class Contact extends Component {
     render() {
@@ -7,7 +8,9 @@ class Contact extends Component {
             <div className="container">
                 <div className="row contact" style={{height: '400px'}}>
                     <Maps/>
-                    <div className="col-md-6">contact form</div>
+                    <div className="col-md-6">
+                        <MessageUs />
+                    </div>
                 </div>
             </div>
         );

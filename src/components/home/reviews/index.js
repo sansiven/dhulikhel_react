@@ -16,7 +16,7 @@ class Reviews extends Component {
                 height: '336'
             },
             {
-                src: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fratnaman.dangol%2Fposts%2F2012669245437715&width=500',
+                src: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fratnaman.dangol%2Fposts%2F2012669245437715&width=auto',
                 width: '500',
                 height: '278'
             },
@@ -46,10 +46,12 @@ class Reviews extends Component {
 
     render() {
         const settings = { 
-            dots: true,
+            dots: false,
             infinite: true,
             autoplay: true,
-            speed: 500
+            speed: 500,
+            arrows: true,
+            
         }
 
         
@@ -61,7 +63,7 @@ class Reviews extends Component {
                         <div className="col-lg-12">
                             <p className="review-part-haead">See what our guests say</p>
                         </div>
-                        <div id="myCarousel" class="carousel" style={{position:'relative', height: '600px'}}>
+                        <div id="myCarousel" class="carousel" style={{position:'relative', height: '600px', width:'100%'}}>
                             <div className="reviews-slider" style={{overflow: 'hidden'}}>
                                 <Slider {...settings} >
                                     {this.state.fb_reviews_object_array.map((item, i) => (
@@ -71,7 +73,12 @@ class Reviews extends Component {
                                                 src={item.src} 
                                                 width={item.width}
                                                 height={item.height}
-                                                style={{border:'none',overflow:'hidden'}} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> 
+                                                style={{border:'none',overflow:'hidden'}} 
+                                                scrolling="no" 
+                                                frameborder="0" 
+                                                allowTransparency="true" 
+                                                allow="encrypted-media">
+                                            </iframe> 
                                         </div>
                                     ))}
                                 </Slider>

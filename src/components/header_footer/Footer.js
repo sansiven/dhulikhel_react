@@ -1,5 +1,6 @@
 import React from 'react';
 import {HotelLogo} from '../ui/Logo';
+import NewsLetter from './newsletter';
 
 const Footer = () => {
     return (
@@ -31,7 +32,9 @@ const Footer = () => {
                         <li className="instagram"><a href="https://www.instagram.com/dhulikhelboutiquehotel/"><i className="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
-                <div className="right col-md">Right Block</div>
+                <div className="right col-md">
+                    <NewsLetter/>
+                </div>
             </div>
             
             

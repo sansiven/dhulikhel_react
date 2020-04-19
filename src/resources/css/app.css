@@ -15,14 +15,23 @@ body{
     font-family: 'Montserrat', sans-serif !important;
 }
 
+.error_label {
+    color: #F44336;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+.success_label {
+    color: #e99898;
+    font-weight: 600;
+    margin: 10px 0px;
+}
 
 
 .nav-buttons{
     margin: 5px;
 }
 
-
-/* copied */
 
 
 /*====================
@@ -151,6 +160,10 @@ footer.footer-component .row{
     float: left;
     margin-right: 8px;
     padding: 5px;
+}
+
+.footer_newsletter{
+    text-align: center;
 }
 
 /* ----------Contact------------- */

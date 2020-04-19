@@ -59,13 +59,13 @@ class Header extends Component {
                                 />
                             </div>
                         </div>
-                        <Link class="nav-buttons" to="/accomodation">
+                        <Link className="nav-buttons" to="/accomodation">
                             <Button variant="outlined" color="#3da066">Accomodation</Button>
                         </Link>
-                        <Link class="nav-buttons" to="/services">
+                        <Link className="nav-buttons" to="/services">
                             <Button variant="outlined" color="#3da066">Our Services</Button>
                         </Link>
-                        <Link class="nav-buttons" to="/gallery">
+                        <Link className="nav-buttons" to="/gallery">
                             <Button variant="outlined" color="#3da066">Gallery</Button>
                         </Link>
                     </ToolBar>
