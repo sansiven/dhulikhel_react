@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Fade from 'react-reveal/Fade';
+import Roll from 'react-reveal/Roll';
 import FormField from '../../../ui/formFields';
 import {validate} from '../../../ui/misc';
 import Button from '@material-ui/core/Button';
+import {firebaseMessages} from '../../../../firebase'; 
 
 class MessageUs extends Component {
 
@@ -120,6 +121,8 @@ class MessageUs extends Component {
 
         if(formIsValid){
             console.log(dataToSubmit)
+            firebaseMessages.push(dataToSubmit)
+            
             this.resetFormSuccess()
         }else{
             this.setState({
@@ -132,7 +135,7 @@ class MessageUs extends Component {
 
     render() {
         return (
-            <Fade>
+            <Roll right>
                 <div className="message-us" style={{textAlign: 'center'}}>
                     <form onSubmit={(event) => this.submitForm(event)} className="message-us-form">
                         <p>Feel free to text us</p>
@@ -164,7 +167,7 @@ class MessageUs extends Component {
                         >Send Message</Button>
                     </form>
                 </div>
-            </Fade>
+            </Roll>
         );
     }
 }

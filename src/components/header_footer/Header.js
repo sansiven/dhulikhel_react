@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import AppBar from '@material-ui/core/AppBar';
+/* import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom';
 
-import {HotelLogo} from '../ui/Logo';
+import {HotelLogo} from '../ui/Logo'; */
+
+import Navigation from '../header_footer/navigation';
 
 //to make a different layout for mobile menu we can lookinto this site https://goshakkk.name/different-mobile-desktop-tablet-layouts-react/
 
@@ -19,9 +21,9 @@ class Header extends Component {
     }
 
     //if not needed to make header transparent
-    componentWillUnmount(){
+    /* componentWillUnmount(){
         window.removeEventListener('scroll');
-    }
+    } */
 
     handleScroll = () => {
         if(window.scrollY > 0){
@@ -37,8 +39,8 @@ class Header extends Component {
 
     render() {
         return (
-            
-                <AppBar 
+            <div>
+                {/* <AppBar 
                     position="fixed"
                     style={{
                         backgroundColor: this.state.headerTransparent ? "transparent" : "#ffb949",
@@ -69,8 +71,9 @@ class Header extends Component {
                             <Button variant="outlined" color="#3da066">Gallery</Button>
                         </Link>
                     </ToolBar>
-                </AppBar>
-            
+                </AppBar> */}
+                <Navigation />
+            </div>
         );
     }
 }

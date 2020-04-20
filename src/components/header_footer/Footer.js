@@ -1,6 +1,7 @@
 import React from 'react';
 import {HotelLogo} from '../ui/Logo';
 import NewsLetter from './newsletter';
+import Zoom from 'react-reveal/Zoom'
 
 const Footer = () => {
     return (
@@ -8,6 +9,7 @@ const Footer = () => {
             
             <div className="row">
                 <div className="left col-md">
+                    <Zoom>
                     <div className="footer-address">
                         <div className="">
                             <h4><i className="footer-icons fas fa-map-pin"></i>Address</h4>
@@ -20,6 +22,7 @@ const Footer = () => {
                             <p><i className="footer-icons fas fa-envelope"></i>Email : <a class="footer-email" href="mailto:dhulikhelboutiquehotel@gmail.com">dhulikhelboutiquehotel@gmail.com</a></p>
                         </div>
                     </div>
+                    </Zoom>
                 </div>
                 <div className="middle col-md">
                     <HotelLogo 

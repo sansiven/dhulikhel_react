@@ -26,7 +26,7 @@ export const Tag = (props) => {
     }
 }
 
-
+//to make array of datas as frebase would not provide the array
 export const firebaseLooper = (snapshot) => {
     const data = [];
     snapshot.forEach((childSnapshot)=>{
@@ -38,6 +38,7 @@ export const firebaseLooper = (snapshot) => {
     return data;
 } 
 
+//since results appears as first one goes to the last and last one goes to the first
 export const reverseArray =(actualArray) => {
     let reversedArray = [];
     for(let i=actualArray.length-1;i>=0;i--){

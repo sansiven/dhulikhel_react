@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {Zoom} from 'react-reveal';
 import FormField from '../../ui/formFields';
 import {validate} from '../../ui/misc';
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
+import { firebasePromotions } from '../../../firebase';
 
 class NewsLetter extends Component {
 
@@ -52,7 +53,7 @@ class NewsLetter extends Component {
         //console.log(this.state.formdata.email.value)
     }
 
-    resetFormSuccess(){
+    resetFormSuccess(type){
         //not good to mutate the state so copy the state and work on this
         const newFormData = { ...this.state.formdata};
 
@@ -65,7 +66,7 @@ class NewsLetter extends Component {
         this.setState({
             formError: false,
             formdata: newFormData,
-            formSuccess: 'Congratulations'
+            formSuccess: type ? 'Congratulations' : 'Already Registered!!'
         })
 
         this.clearSuccessMessage();
@@ -88,8 +89,19 @@ class NewsLetter extends Component {
         }
 
         if(formIsValid){
-            console.log(dataToSubmit)
-            this.resetFormSuccess()
+            //console.log(dataToSubmit);
+            //to check whether the entered email is already on database
+            firebasePromotions.orderByChild('email').equalTo(dataToSubmit.email).once("value")
+            .then((snapshot)=>{
+                //console.log(snapshot.val())
+                if(snapshot.val() === null){
+                    firebasePromotions.push(dataToSubmit);
+                    this.resetFormSuccess(true)
+                }else{
+                    this.resetFormSuccess(false)
+                }
+            })
+            //this.resetFormSuccess()
         }else{
             this.setState({
                 formError: true

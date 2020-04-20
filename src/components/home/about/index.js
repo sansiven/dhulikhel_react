@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import aboutImage from '../../../resources/images/exterior4.jpg'
+import aboutImage from '../../../resources/images/exterior4.jpg';
+import Flip from 'react-reveal/Flip';
+import Slide from 'react-reveal/Slide';
 
 class About extends Component {
 
@@ -12,13 +14,21 @@ class About extends Component {
         }
     }
 
+    componentDidMount(){
+        
+    }
+
     render() {
         return (
             <div className="container about-container">
-                <h2 className="about-heading">About Dhulikhel Boutique</h2>
+                <Flip>
+                    <h2 className="about-heading">About Dhulikhel Boutique</h2>   
+                </Flip>
+                
                 <hr className="abt-line"></hr>
                 <h6 style={{textAlign: 'center', marginBottom:"40px"}}>{this.state.content.subtitle}</h6>
                 <div className="row">
+                    <Slide left>
                     <div className="col-lg-6">
                         <p style={{
                             lineHeight:'24px',
@@ -35,6 +45,8 @@ class About extends Component {
                             {this.state.content.paragraph_three}
                         </p>
                     </div>
+                    </Slide>
+                    <Slide right>
                     <div className="col-lg-6" style={{
                         display: 'flex',
                         justifyContent: 'center',
@@ -42,6 +54,7 @@ class About extends Component {
                     }}>
                         <img src={aboutImage} alt="about" style={{borderRadius: '5px'}}></img>
                     </div>
+                    </Slide>
                 </div>
                 
             </div>

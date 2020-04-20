@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import Spin from 'react-reveal/Spin';
 
 class Reviews extends Component {
 
@@ -58,7 +59,10 @@ class Reviews extends Component {
         return (
             <section id="review">
                 <div className="container">
-                    <b className="quote-right"><i className="fa fa-quote-right"></i></b>
+                    <Spin>
+                        <b className="quote-right"><i className="fa fa-quote-right"></i></b>
+                    </Spin>
+                    
                     <div className="row">
                         <div className="col-lg-12">
                             <p className="review-part-haead">See what our guests say</p>
