@@ -11,6 +11,8 @@ import Home from './components/home'
 import Gallery from './components/gallery';
 import Sign_In from './components/signin';
 import Services from './components/services';
+import Accomodation from './components/accomodation';
+import SingleAccomodation from './components/accomodation/SingleAccomodation';
 import AdminMessages from './components/admin/messages/AdminMesaages';
 import AdminGallery from './components/admin/gallery';
 import AdminRooms from './components/admin/rooms';
@@ -36,6 +38,8 @@ const Routes = (props) => {
         <PrivateRoutes {...props} path="/dashboard" exact component={Dashboard}/>
         <PublicRoutes {...props} restricted={true} path="/sign_in" exact component={Sign_In} />
         <PublicRoutes {...props} restricted={false} path="/gallery" exact component={Gallery} />
+        <PublicRoutes {...props} restricted={false} path="/accomodation/:id" exact component={SingleAccomodation} />
+        <PublicRoutes {...props} restricted={false} path="/accomodation" exact component={Accomodation} />
         <PublicRoutes {...props} restricted={false} path="/services" exact component={Services} />
         <PublicRoutes {...props} restricted={false} path="/" exact component={Home} />
         

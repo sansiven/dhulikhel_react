@@ -440,6 +440,10 @@ footer.footer-component .row {
     align-items: center;
 }
 
+.gallery-container{
+    min-height: "1150px"
+}
+
 
 .Portfolio-nav {
 	padding: 0;
@@ -463,7 +467,7 @@ footer.footer-component .row {
 	text-transform: uppercase;
 	font-family: 'Montserrat', sans-serif;
 	background: #f7f7f7;
-	margin-bottom: 5px;
+	margin: 10px;
 	transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -473,6 +477,16 @@ footer.footer-component .row {
 	background: #36b83e;
 	color: #e83935;
 	text-decoration: none;
+}
+
+li.option img{
+    vertical-align: middle;
+}
+
+li.option.active{
+    background: #36b83e;
+    color: #fff;
+    text-decoration: none;
 }
 
 .gallery-image-wrapper{
@@ -534,9 +548,186 @@ img.gallery-image-single{
 .featured-box-col2 {
 	overflow: hidden;
 }
+
+.service-single-item .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-single-item .item img{
+    max-width: 100%;
+    vertical-align: middle;
+}
 /* services */
 
+/* accomodation */
+.accomodation-container{
+    margin-top: 100px;
+}
 
+.accomodation-container .row{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+figure.effect-apollo img {
+	opacity: 0.95;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale3d(1.05,1.05,1);
+	transform: scale3d(1.05,1.05,1);
+}
+
+figure.effect-apollo figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.5);
+	content: '';
+	-webkit-transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+}
+
+figure.effect-apollo p {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #212121;
+    margin: 3em;
+    padding: 0 1em;
+    max-width: 150px;
+    border-right: 4px solid #212121;
+    text-align: right;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+
+figure.effect-apollo h2 {
+	text-align: left;
+}
+
+figure.effect-apollo:hover img {
+	opacity: .2;
+    -webkit-transform: scale3d(1,1,1);
+    transform: scale3d(1,1,1);
+}
+
+figure.effect-apollo:hover figcaption::before {
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+}
+
+figure.effect-apollo:hover p {
+	opacity: 1;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+.grid {
+	position: relative;
+	clear: both;
+	margin: 0 auto;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;	
+	overflow: hidden;
+	margin: 10px 0;
+	height: auto;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	width: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h3 {
+    word-spacing: -0.15em;
+    font-size: 1.5em;
+    margin-top: 18%;
+    color: #FFF;
+    font-weight: 600;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+.room-name{
+    background: rgba(0,0,0,0.4);
+}
+
+.single-room-container{
+    margin-top: 100px;
+}
+
+.single-room-figure{
+    max-width: 100%;
+    display: inline-flex;
+}
+
+.single-room-row .col-md-7{
+    margin: 0 auto;
+    text-align: center;
+}
+/* accomodation */
 
 
 @media only screen and (max-width: 768px) {
@@ -554,5 +745,10 @@ img.gallery-image-single{
 
     .about-container {
         width: 750px;
+    }
+
+    .service-single-item .item{
+        display: block;
+        padding: 10px;
     }
 }

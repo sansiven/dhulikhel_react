@@ -19,19 +19,34 @@ class Services extends Component {
             this.state.services.map((service, i) => {
                 
                 console.log(service)
-                return (<div className="white-bg" key={i}>
-                    hey
-                    <div className="item">
-                        <figure className="col-lg-5 col-sm-4">
-                            <img  src={service.url} alt={service.name}/>
-                        </figure>
-                        <div className="featured-box-col2 delay-04s">
-                            <h3 className="carousel-h3">{service.name}</h3>
-                            <p>{service.description} </p>
-                        </div>    
-                    </div>
-                </div>
-            )})
+                if(i % 2 === 0){
+                    return (<div className="white-bg" key={i}>
+                                <div className="item">
+                                    <figure className="col-lg-5 col-sm-4">
+                                        <img  src={service.url} alt={service.name}/>
+                                    </figure>
+                                    <div className="featured-box-col2 delay-04s">
+                                        <h3 className="carousel-h3">{service.name}</h3>
+                                        <p>{service.description} </p>
+                                    </div>    
+                                </div>
+                            </div>
+                        )
+                }else{
+                    return (<div className="white-bg" key={i}>
+                            <div className="item">
+                                <div className="featured-box-col2 delay-04s">
+                                    <h3 className="carousel-h3">{service.name}</h3>
+                                    <p>{service.description} </p>
+                                </div>    
+                                <figure className="col-lg-5 col-sm-4">
+                                    <img  src={service.url} alt={service.name}/>
+                                </figure>
+                            </div>
+                        </div>
+                    )
+                }
+            })
             
         }
     }
@@ -82,21 +97,40 @@ class Services extends Component {
                         {
                             !this.state.isLoading ? 
                             this.state.services.map((service, i) => {
-                                return (
-                                    <div className="row service-single-item">
-                                        <div className="white-bg" key={i}>
-                                            <div className="item">
-                                                <figure className="col-lg-5 col-sm-4">
-                                                    <img  src={service.url} alt={service.name}/>
-                                                </figure>
-                                                <div className="featured-box-col2 delay-04s">
-                                                    <h3 className="carousel-h3">{service.name}</h3>
-                                                    <p>{service.description} </p>
-                                                </div>    
+                                if(i % 2 == 0){
+                                    return (
+                                        <div className="row service-single-item" key={i}>
+                                            <div className="white-bg">
+                                                <div className="item">
+                                                    <figure className="col-lg-5 col-sm-4">
+                                                        <img  src={service.url} alt={service.name}/>
+                                                    </figure>
+                                                    <div className="featured-box-col2 delay-04s">
+                                                        <h3 className="carousel-h3">{service.name}</h3>
+                                                        <p>{service.description} </p>
+                                                    </div>    
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                )})
+                                    )
+                                }else{
+                                    return (
+                                        <div className="row service-single-item" key={i}>
+                                            <div className="white-bg">
+                                                <div className="item">
+                                                    <div className="featured-box-col2 delay-04s">
+                                                        <h3 className="carousel-h3">{service.name}</h3>
+                                                        <p>{service.description} </p>
+                                                    </div>
+                                                    <figure className="col-lg-5 col-sm-4">
+                                                        <img  src={service.url} alt={service.name}/>
+                                                    </figure>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                                })
                             :null
                         }
                     </div>
