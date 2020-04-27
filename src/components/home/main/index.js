@@ -15,7 +15,11 @@ const Main = () => {
                 <Bounce bottom>
                     <div className="main_text">
                         <div className="wrapper">
-                            Welcome to DhuliKhel Boutique
+                            <h1>
+                                <p className="welcome">Welcome</p>
+                                <p className="to">To</p>
+                                <p className="DB">DhuliKhel Boutique</p>
+                                </h1>
                         </div>
                         
                     </div>

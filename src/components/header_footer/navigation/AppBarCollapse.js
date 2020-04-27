@@ -35,13 +35,13 @@ const AppBarCollapse = (props) => {
             </ButtonAppBarCollapse>
             <div className={props.classes.buttonBar} id="appbar-collapse">
                 <Link className="nav-buttons" to="/accomodation">
-                    <Button variant="outlined" color="#3da066">Accomodation</Button>
+                    <Button variant="contained" color="#primary">Accomodation</Button>
                 </Link>
                 <Link className="nav-buttons" to="/services">
-                    <Button variant="outlined" color="#3da066">Our Services</Button>
+                    <Button variant="contained" color="#secondary">Our Services</Button>
                 </Link>
                 <Link className="nav-buttons" to="/gallery">
-                    <Button variant="outlined" color="#3da066">Gallery</Button>
+                    <Button variant="contained" color="#default">Gallery</Button>
                 </Link>
             </div>
         </div>

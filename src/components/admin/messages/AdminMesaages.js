@@ -24,7 +24,6 @@ class AdminMesaages extends Component {
     }
 
     componentDidMount(){
-        console.log('hey')
         firebaseMessages.once('value').then((snapshot) => {
             const messages = firebaseLooper(snapshot);
             this.setState({
@@ -36,13 +35,12 @@ class AdminMesaages extends Component {
 
 
     render() {
-        console.log(this.state)
         return (
             <AdminLayout>
             <div className="messages-container" style={{marginTop: "100px"}}>
                 <div className="container">
                     <h3 style={{textAlign:'center'}}>Messages</h3>
-                    <div className="row" style={{display: 'block'}}>
+                    <div className="row messages-row">
                         <div className="admin_progress">
                             {this.state.isLoading ?
                                     <CircularProgress thickness={7} style={{color:"#3da066"}} />

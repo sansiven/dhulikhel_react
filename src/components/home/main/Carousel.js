@@ -1,8 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
-import slide_one from '../../../resources/images/bar.jpg'
-import slide_two from '../../../resources/images/drinks.jpg'
-import slide_three from '../../../resources/images/exterior3.jpg'
+import slide_one from '../../../resources/images/first.jpg'
+import slide_two from '../../../resources/images/second.jpg'
+import slide_three from '../../../resources/images/third.JPG'
 
 const Carousel = () => {
 
@@ -17,8 +17,8 @@ const Carousel = () => {
         <div className="carousel_wrapper"
             style={{
                 height:`${window.innerHeight}px`,
-                overflow:'hidden'
-            }}
+                overflow: 'hidden',
+                            }}
         >
             <Slider {...settings} >
                 <div>

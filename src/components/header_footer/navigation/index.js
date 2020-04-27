@@ -38,10 +38,10 @@ class Navigation extends Component {
             <AppBar 
                 position="fixed"
                 style={{
-                    backgroundColor: this.state.headerTransparent ? "transparent" : "#ffb949",
+                    backgroundColor: this.state.headerTransparent ? "transparent" : "#f7f7ff",
                     boxShadow:"none",
                     padding: '10px 0',
-                    borderColor: '2px solid #00285e'
+                    borderColor: '2px solid #70798c'
                 }}
             >
                 <Toolbar style={{
@@ -60,7 +60,7 @@ class Navigation extends Component {
                                     link={true}
                                     linkTo="/"
                                     width ="100px"
-                                    height="50px"
+                                    height="100px" 
                                     bckSize= "100px"
                                 />
                             </div>

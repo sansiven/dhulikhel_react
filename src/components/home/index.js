@@ -13,7 +13,8 @@ class Home extends Component {
                 <Main />
                 <About/>
                 <Reviews />
-                <h3 className="contact-header">Find Us Here and Feel free to contact us:</h3>
+                <h2 className="contact-header">Let's Connect</h2>
+                <hr className="abt-line"></hr>
                 <Contact />
                 {/* </React.Fragment>  */} 
             </div>

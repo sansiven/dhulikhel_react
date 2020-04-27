@@ -97,7 +97,7 @@ class Services extends Component {
                         {
                             !this.state.isLoading ? 
                             this.state.services.map((service, i) => {
-                                if(i % 2 == 0){
+                                if(i % 2 === 0){
                                     return (
                                         <div className="row service-single-item" key={i}>
                                             <div className="white-bg">

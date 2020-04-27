@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import aboutImage from '../../../resources/images/exterior4.jpg';
 import Flip from 'react-reveal/Flip';
 import Slide from 'react-reveal/Slide';
+import { firebaseAboutContent } from '../../../firebase';
 
 class About extends Component {
 
@@ -15,10 +16,23 @@ class About extends Component {
     }
 
     componentDidMount(){
-        
+        firebaseAboutContent.once('value').then((snapshot) => {
+            const contentObject = snapshot.val();
+            this.setState({
+                content: {
+                    subtitle: contentObject.subtitle,
+                    paragraph_one: contentObject.pg_one,
+                    paragraph_two: contentObject.pg_two,
+                    paragraph_three: contentObject.pg_three
+                }
+            })
+        }).catch( e => {
+            console.log(e)
+        })
     }
 
     render() {
+        console.log(this.state)
         return (
             <div className="container about-container">
                 <Flip>
@@ -32,10 +46,10 @@ class About extends Component {
                     <div className="col-lg-6">
                         <p style={{
                             lineHeight:'24px',
-                            fontFamily: 'Open Sans',
+                            fontFamily: 'lato',
                             fontSize: '14px',
                             fontWeight: 'normal',
-                            color: '#888888'
+            
                         }}
                         >
                             {this.state.content.paragraph_one}
