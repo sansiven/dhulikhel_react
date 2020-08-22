@@ -23,7 +23,6 @@ class Tariff extends Component {
     componentDidMount(){
         firebaseTariffs.once('value').then((snapshot) => {
             const tariffs = firebaseLooper(snapshot);
-            console.log(tariffs);
             this.setState({
                 rows: tariffs
             })
@@ -57,12 +56,16 @@ class Tariff extends Component {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                <p className="table-footer">(Prices are subjected to VAT)</p>
+                
                 <div className="room-capacity">
-                    <strong>Room capacity:</strong>
-                    <span>2p X 2 rooms</span>
-                    <span>3p X 5 rooms</span>
-                    <span>4p X 1 rooms</span>
+                    <p className="table-footer" style={{width: "100%"}}>*(Prices are subjected to VAT)</p>
+                    <br/>
+                    <div className="room-capacity-container" style={{width:"100%"}}>
+                        <strong>Room capacity:</strong>
+                        <span>2p X 2 rooms</span>
+                        <span>3p X 5 rooms</span>
+                        <span>4p X 1 rooms</span>
+                    </div>
                 </div>
             </div>
         );

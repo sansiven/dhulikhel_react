@@ -5,9 +5,6 @@ import Zoom from 'react-reveal/Zoom';
 import Trip from '../../resources/images/trip.png';
 import Booking from '../../resources/images/booking.png';
 import Expedia from '../../resources/images/expedia.png';
-import FACEBOOK from '../../resources/images/facebook.png';
-import INSTAGRAM from '../../resources/images/instagram.png';
-import Chat from '../Chat'
 
 
 
@@ -19,8 +16,8 @@ const Footer = () => {
                 <div className="left col-md">
                     <Zoom>
                     <div className="footer-address">
-                        <div className="rightfoot">
-                            <h3>Hotel Address</h3>
+                        <div className="">
+                            <h3><i className="footer-icons fas fa-map-pin"></i>Hotel Address</h3>
                         </div>
                         <div>
                             <p><i className="footer-icons fas fa-map-marker-alt"></i>Emathe Marg
@@ -38,14 +35,13 @@ const Footer = () => {
                         height="120px"
                         bckSize="170px"
                     />
-                    <NewsLetter/>
-                    
+                    <p className="copyright">© 2020  Dhulikhel Boutique Hotel - All Rights Reserved - Developed By </p>
                 </div>
                 <div className="right col-md">
                     <div className="connect-div">
-                        
+                        <p className="connect-with-us">Connect With us:</p>
                         <div className="row connect-row">
-                           
+                            <div className="col-md-6">
                                 <div className="booking-sites">
                                     <ul className="booking-links">
                                         <li className="booking">
@@ -65,39 +61,23 @@ const Footer = () => {
                                         </li>
                                     </ul>
                                 </div>
-                            
-                            
+                            </div>
+                            <div className="col-md-6">
                                 <ul class="social-link">
-                                <li className="facebook">
-                                    <a href="https://www.facebook.com/dhulikhelboutique/">
-                                    <img className="facebook-img" src={FACEBOOK} alt="facebook.png"></img>
-                                    </a>
-                                </li>
-                                <li className="instagram">
-                                    <a href="https://www.instagram.com/dhulikhelboutiquehotel/">
-                                    <img className="facebook-img" src={INSTAGRAM} alt="instagram.png"></img>
-                                     </a>
-                                </li>
+                                    <li className="facebook"><a href="https://www.facebook.com/dhulikhelboutique/"><i className="fab fa-facebook"></i></a></li>
+                                    <li className="instagram"><a href="https://www.instagram.com/dhulikhelboutiquehotel/"><i className="fab fa-instagram"></i></a></li>
                                 </ul>
                                 
-                            
+                            </div>
                         </div>
 
                     </div>
-                    
+                    <NewsLetter/>
                 </div>
             </div>
-            <div className="sub-footer">
-             <div className="container">   
-                     <p> © 2020  Dhulikhel Boutique Hotel - All Rights Reserved </p>
-             </div>
-        </div>
-        <Chat />
+            
+            
         </footer>
-       
-         
-    
-
     );
 };
 

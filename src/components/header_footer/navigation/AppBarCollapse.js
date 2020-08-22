@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, MenuItem } from "@material-ui/core";
+import { MenuItem } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ButtonAppBarCollapse from "./ButtonAppBarCollapse";
 import {Link} from 'react-router-dom';
@@ -35,13 +35,13 @@ const AppBarCollapse = (props) => {
             </ButtonAppBarCollapse>
             <div className={props.classes.buttonBar} id="appbar-collapse">
                 <Link className="nav-buttons" to="/accomodation">
-                    <Button variant="contained" color="#primary">Accomodation</Button>
+                    <button className="btn nav-btn">Accomodation</button>
                 </Link>
                 <Link className="nav-buttons" to="/services">
-                    <Button variant="contained" color="#secondary">Our Services</Button>
+                    <button className="btn nav-btn">Our Services</button>
                 </Link>
                 <Link className="nav-buttons" to="/gallery">
-                    <Button variant="contained" color="#default">Gallery</Button>
+                    <button className="btn nav-btn">Gallery</button>
                 </Link>
             </div>
         </div>

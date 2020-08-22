@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { firebase, firebaseDB } from '../../../firebase'
 import SingleRoom from './SingleRoom'; 
+import MessageUs from '../../home/contact/MessageUs';
 import Tariff from '../Tariff';
 import {withRouter} from 'react-router-dom'
 
@@ -40,15 +41,25 @@ class SingleAccomodation extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className="container single-room-container">
                 {
                     this.state.isLoading ? 
-                        <CircularProgress />
+                        <div style={{textAlign:'center'}}><CircularProgress /></div>
                     : <SingleRoom room={this.state.room}/>
                 }
-                <Tariff />
+                <div className="row">
+                    <div className="col-md-6">
+                        <Tariff />
+                    </div>
+                    <div className="col-md-6">
+                        <MessageUs 
+                            btnText="Book Now"
+                            placeholder="Please leave your message details and phone number here"
+                        />
+                    </div>    
+                </div>
+                
             </div>
         );
     }

@@ -15,17 +15,17 @@ const Main = () => {
                 <Bounce bottom>
                     <div className="main_text">
                         <div className="wrapper">
-                            <h1>
-                                <p className="welcome">Welcome</p>
-                                <p className="to">To</p>
-                                <p className="DB">DhuliKhel Boutique</p>
+                            <h1 >
+                                <p>Welcome</p>
+                                <p>To</p>
+                                <p className="welcomeHead">DhuliKhel Boutique</p>
                                 </h1>
                         </div>
                         
                     </div>
                     <p className="main_text_subtitle">We are a hotel that loves crafting beautiful foods and environment for you to relax.</p>
                 </Bounce>                
-                <Link className="book_now_btn" to="/book_now">
+                <Link className="book_now_btn" to="/accomodation">
                     <Button variant="contained" size="large">Book Now</Button>
                 </Link>
             </div>

@@ -37,6 +37,10 @@ const AdminNav = () => {
         {
             title: 'About Content',
             linkTo: '/admin_about'
+        },
+        {
+            title: 'Reviews',
+            linkTo: '/admin_reviews'
         }
     ]
 

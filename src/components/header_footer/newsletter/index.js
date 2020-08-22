@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Zoom} from 'react-reveal';
 import FormField from '../../ui/formFields';
 import {validate} from '../../ui/misc';
-import Button from '@material-ui/core/Button';
 import { firebasePromotions } from '../../../firebase';
 
 class NewsLetter extends Component {
@@ -17,7 +16,7 @@ class NewsLetter extends Component {
                 config: {
                     name: 'email_input',
                     type: 'email',
-                    placeholder: 'Enter your email'
+                    placeholder: 'Enter Your Email'
                 },
                 validation:{
                     required: true,
@@ -129,7 +128,8 @@ class NewsLetter extends Component {
                                 :null
                             }
                             <div className="success_label">{this.state.formSuccess}</div>
-                            <Button onClick={(event) => this.submitForm(event)}>Enroll</Button>
+                            {/* <Button variant="contained" color="primary" onClick={(event) => this.submitForm(event)}>Enroll</Button> */}
+                            <button className="btn nav-btn">Enroll</button> 
                         </div>
                     </form>
                 </div>

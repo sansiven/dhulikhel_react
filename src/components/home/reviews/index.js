@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import Spin from 'react-reveal/Spin';
+import { firebaseReviews } from '../../../firebase';
+import {firebaseLooper, reverseArray} from '../../ui/misc';
+
 
 class Reviews extends Component {
 
@@ -41,9 +44,23 @@ class Reviews extends Component {
                 width: '500',
                 height: '374'
             }
-        ]
+        ],
+        fb_reviews: [],
+        width: '500',
+        isLoading: true
     }
 
+    componentDidMount(){
+        firebaseReviews.once('value').then((snapshot) => {
+            const reviews = firebaseLooper(snapshot);
+            this.setState({
+                isLoading: false,
+                fb_reviews: reverseArray(reviews)
+            })
+        }).catch((error) => {
+            console.log('firebase rooms error', error);
+        })
+    }
 
     render() {
         const settings = { 
@@ -55,7 +72,6 @@ class Reviews extends Component {
             
         }
 
-        
         return (
             <section id="review">
                 <div className="container">
@@ -65,27 +81,31 @@ class Reviews extends Component {
                     
                     <div className="row">
                         <div className="col-lg-12">
-                            <p className="review-part-haead">See what our guests say</p>
+                            <h2 className="review-part-head">See what our guests say</h2>
                         </div>
-                        <div id="myCarousel" class="carousel" style={{position:'relative', height: '600px', width:'100%'}}>
+                        <div id="myCarousel" class="carousel" style={{position:'relative', height: '400px', width:'100%'}}>
                             <div className="reviews-slider" style={{overflow: 'hidden'}}>
-                                <Slider {...settings} >
-                                    {this.state.fb_reviews_object_array.map((item, i) => (
-                                        <div key={i} className="item">
-                                            <iframe 
-                                                title={item.key}
-                                                src={item.src} 
-                                                width={item.width}
-                                                height={item.height}
-                                                style={{border:'none',overflow:'hidden'}} 
-                                                scrolling="no" 
-                                                frameborder="0" 
-                                                allowTransparency="true" 
-                                                allow="encrypted-media">
-                                            </iframe> 
-                                        </div>
-                                    ))}
-                                </Slider>
+                                {!this.state.isLoading ? 
+                                    <Slider {...settings} >
+                                        {this.state.fb_reviews.map((item, i) => (
+                                            <div key={i} className="item">
+                                                <iframe 
+                                                    title={item.id}
+                                                    src={item.name} 
+                                                    width="500"
+                                                    height="500"
+                                                    style={{border:'none',overflow:'hidden'}} 
+                                                    scrolling="no" 
+                                                    frameBorder="0" 
+                                                    /* allowTransparency="true"  */
+                                                >
+                                                </iframe> 
+                                            </div>
+                                        ))}
+                                    </Slider>
+                                    :<p>hey hey</p>
+                                }
+                                
                             </div>
                         </div>
                     </div>

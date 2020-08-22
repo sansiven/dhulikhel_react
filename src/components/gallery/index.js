@@ -25,6 +25,9 @@ class Gallery extends Component {
                         .then( url => {
                             gallery[key].url = url
                             resolve();
+                        }).catch(e => {
+                            console.log(e)
+                            reject(e);
                         })
                     })
                 )
@@ -35,7 +38,7 @@ class Gallery extends Component {
                     gallery: gallery,
                     filteredGallery: gallery
                 })
-            })
+            }).catch(e => console.log(e))
         }).catch((e)=>{
             console.log(e)
         })
@@ -66,13 +69,14 @@ class Gallery extends Component {
     }
 
     render() {
+        console.log(this.state)
         return (
             <div className="gallery-container">
                 <div className="container">
                     <div className="row row-first">
-                        <h3>Gallery</h3>
+                        <h2 className="second-heading">Gallery</h2>
                         <hr className="gallery-line"></hr>
-                        <h6>Fresh photos of area in and out of Hotel.</h6>
+                        <h5 className="third-heading" >"Fresh portfolio of pictures that will keep you looking for more"</h5>
                         <div className="gallery_filters">
                             <div className="filters_container">
                                 <div className="portfolioFilter">  
@@ -82,16 +86,16 @@ class Gallery extends Component {
                                             onClick={() => this.showFiltered('All')}>All</li>
                                         <li 
                                             className={`option ${this.state.filterThrough === 'rooms' ? 'active' : ''}`} 
-                                            onClick={() => this.showFiltered('rooms')}>Rooms</li>
+                                            onClick={() => this.showFiltered('rooms')}>ROOMS</li>
                                         <li 
                                             className={`option ${this.state.filterThrough === 'food' ? 'active' : ''}`} 
-                                            onClick={() => this.showFiltered('food')}>Food & Drinks</li>
+                                            onClick={() => this.showFiltered('food')}>FOOD & DRINKS</li>
                                         <li 
                                             className={`option ${this.state.filterThrough === 'exterior' ? 'active' : ''}`} 
-                                            onClick={() => this.showFiltered('exterior')}>Exteriors</li>
+                                            onClick={() => this.showFiltered('exterior')}>EXTERIOR</li>
                                         <li 
                                             className={`option ${this.state.filterThrough === 'interior' ? 'active' : ''}`} 
-                                            onClick={() => this.showFiltered('interior')}>Interior</li>
+                                            onClick={() => this.showFiltered('interior')}>INTERIOR</li>
                                     </ul>
                                 </div> 
                             </div>

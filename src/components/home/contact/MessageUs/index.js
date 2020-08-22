@@ -48,7 +48,7 @@ class MessageUs extends Component {
                 config: {
                     name: 'message_input',
                     type: 'text',
-                    placeholder: 'Your Message',
+                    placeholder: this.props.placeholder ? this.props.placeholder : "Your Message",
                     class: 'form-control text-area'
                 },
                 validation:{
@@ -74,7 +74,6 @@ class MessageUs extends Component {
         newElement.validationMessage = validData[1]
 
         newFormData[element.id] = newElement;
-        console.log(newFormData)
         
         
         this.setState({
@@ -138,8 +137,7 @@ class MessageUs extends Component {
             <Roll right>
                 <div className="message-us" style={{textAlign: 'center'}}>
                     <form onSubmit={(event) => this.submitForm(event)} className="message-us-form">
-                        <p>Feel free to text us</p>
-                        <FormField 
+                            <FormField 
                             id={'name'}
                             formData = {this.state.formdata.name}
                             change={(element)=>this.updateForm(element)}
@@ -160,11 +158,10 @@ class MessageUs extends Component {
                         }
                         <div className="success_label">{this.state.formSuccess}</div>
                         <Button 
-                            variant="contained" 
-                            color="green" 
+                            variant="contained"  
                             size="large"
                             onClick={(event) => this.submitForm(event)}
-                        >Send Message</Button>
+                        >{this.props.btnText ? this.props.btnText : "Send Message"}</Button>
                     </form>
                 </div>
             </Roll>

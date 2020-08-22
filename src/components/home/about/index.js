@@ -4,6 +4,7 @@ import Flip from 'react-reveal/Flip';
 import Slide from 'react-reveal/Slide';
 import { firebaseAboutContent } from '../../../firebase';
 
+
 class About extends Component {
 
     state = {
@@ -32,7 +33,6 @@ class About extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className="container about-container">
                 <Flip>
@@ -40,35 +40,30 @@ class About extends Component {
                 </Flip>
                 
                 <hr className="abt-line"></hr>
-                <h6 style={{textAlign: 'center', marginBottom:"40px"}}>{this.state.content.subtitle}</h6>
-                <div className="row">
-                    <Slide left>
-                    <div className="col-lg-6">
-                        <p style={{
-                            lineHeight:'24px',
-                            fontFamily: 'lato',
-                            fontSize: '14px',
-                            fontWeight: 'normal',
-            
-                        }}
-                        >
-                            {this.state.content.paragraph_one}
-                            <br/>
-                            {this.state.content.paragraph_two}
-                            <br/>
-                            {this.state.content.paragraph_three}
-                        </p>
-                    </div>
-                    </Slide>
-                    <Slide right>
-                    <div className="col-lg-6" style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}>
-                        <img src={aboutImage} alt="about" style={{borderRadius: '5px'}}></img>
-                    </div>
-                    </Slide>
+                <h5 className="third-heading" style={{textAlign: 'center'} }>"{this.state.content.subtitle}"</h5>
+                    <div className="row">
+                        <Slide left>
+                            <div className="col-lg-6">
+                                <p className="content-about">
+                                    {this.state.content.paragraph_one}
+                                    <br/>
+                                    <br/>
+                                    {this.state.content.paragraph_two}
+                                    <br/>
+                                    <br/>
+                                    {this.state.content.paragraph_three}
+                                </p>
+                            </div>
+                        </Slide>
+                        <Slide right>
+                            <div className="col-lg-6" style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}>
+                                <img src={aboutImage} alt="about" style={{borderRadius: '5px'}}></img>
+                            </div>
+                        </Slide>
                 </div>
                 
             </div>

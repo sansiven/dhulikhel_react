@@ -21,9 +21,12 @@ import AdminServices from './components/admin/services';
 import AdminTariff from './components/admin/tariffs';
 import Tariffs from './components/admin/tariffs/Tariffs'
 import AdminAbout from './components/admin/about';
+import NotFound from './components/ui/not_found';
 
 import Dashboard from './components/admin/Dashboard';
 import AddEditServices from './components/admin/services/addEditServices';
+import AddEditReviews from './components/admin/reviews/addEditReviews';
+import AdminReviews from './components/admin/reviews'
 
 const Routes = (props) => {
   console.log(props)
@@ -31,6 +34,9 @@ const Routes = (props) => {
   return (
     <Layout>
       <Switch>
+        <PrivateRoutes {...props} path="/admin_reviews/add_review/:id" exact component={AddEditReviews} />
+        <PrivateRoutes {...props} path="/admin_reviews/add_review" exact component={AddEditReviews} />
+        <PrivateRoutes {...props} path="/admin_reviews" exact component={AdminReviews} />
         <PrivateRoutes {...props} path="/admin_services/add_service/:id" exact component={AddEditServices} />
         <PrivateRoutes {...props} path="/admin_services/add_service" exact component={AddEditServices} />
         <PrivateRoutes {...props} path="/admin_services" exact component={AdminServices} />
@@ -50,6 +56,8 @@ const Routes = (props) => {
         <PublicRoutes {...props} restricted={false} path="/accomodation" exact component={Accomodation} />
         <PublicRoutes {...props} restricted={false} path="/services" exact component={Services} />
         <PublicRoutes {...props} restricted={false} path="/" exact component={Home} />
+        <PublicRoutes {...props} restricted={false} component={NotFound} />
+
         
       </Switch>
     </Layout>

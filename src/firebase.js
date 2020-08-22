@@ -31,6 +31,7 @@ const firebaseRooms = firebaseDB.ref('rooms');
 const firebaseServices = firebaseDB.ref('services');
 const firebaseAboutContent = firebaseDB.ref('aboutContent');
 const firebaseTariffs = firebaseDB.ref('tariffs');
+const firebaseReviews = firebaseDB.ref('reviews');
 
 export {
     firebase,
@@ -41,5 +42,6 @@ export {
     firebaseRooms,
     firebaseServices,
     firebaseAboutContent,
-    firebaseTariffs
+    firebaseTariffs,
+    firebaseReviews
 }

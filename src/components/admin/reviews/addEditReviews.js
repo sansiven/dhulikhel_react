@@ -5,17 +5,16 @@ import FormField from "../../ui/formFields";
 import {validate} from '../../ui/misc';
 import { withRouter } from 'react-router-dom'
 
-import {firebaseServices, firebaseDB, firebase } from '../../../firebase';
-import Fileuploader from '../../ui/fileUploader';
+import {firebaseReviews, firebaseDB} from '../../../firebase';
+import instructionImage from '../../../resources/images/instructions.png';
 
-class AddEditServices extends Component {
+class AddEditReviews extends Component {
 
     state = {
-        serviceId : '',
+        reviewId : '',
         formType: '',
         formError: false,
         formSuccess: '',
-        defaultImg: '',
         formdata: {
             name:{
                 element:'input',
@@ -23,7 +22,7 @@ class AddEditServices extends Component {
                 config:{
                     name:'name_input',
                     type:'text',
-                    label: 'Name of Service',
+                    label: 'Link of Review',
                     class: 'form-control'
                 },
                 validation:{
@@ -32,91 +31,40 @@ class AddEditServices extends Component {
                 valid: false,
                 validationMessage:'',
                 showlabel: true
-            },
-            description:{
-                element:'textarea',
-                value:'',
-                config:{
-                    name:'name_input',
-                    type:'textarea',
-                    label: 'Description of Service',
-                    class: 'form-control'
-                },
-                validation:{
-                    required: true
-                },
-                valid: false,
-                validationMessage:'',
-                showlabel: true
-            },
-            image: {
-                element: 'image',
-                value: '',
-                validation:{
-                    required: true
-                },
-                valid:true
             }
         }
     }
 
-    updateFields = (service, serviceId, type, defaultImg) => {
+    updateFields = (review, reviewId, type) => {
         const newFormData = {...this.state.formdata}
-        /* console.log(room)
-        console.log(newFormData) */
+        console.log(review)
+        console.log(newFormData)
         for(let key in newFormData){
-            newFormData[key].value = service[key];
+            newFormData[key].value = review[key];
             newFormData[key].valid = true;
         }
         //as key and value are same
         this.setState({
-            serviceId,
-            defaultImg,
+            reviewId,
             formType: type,
             formdata: newFormData
         })
     }
 
     componentDidMount(){
-        const serviceId = this.props.match.params.id;
-        if(!serviceId){
+        const reviewId = this.props.match.params.id;
+        if(!reviewId){
             this.setState({
-                formType : 'Add Service'
+                formType : 'Add Review'
             })
         }else{
-            firebaseDB.ref(`services/${serviceId}`).once('value').then((snapshot) => {
-                const service = snapshot.val();
-                let promise = new Promise((resolve, reject) => {
-                    firebase.storage().ref('services')
-                    .child(service.image).getDownloadURL()
-                    .then((url) => {
-                        service.url = url;
-                        resolve();
-                    }).catch( error => {
-                        reject(error);
-                    })
-                })
-                promise.then(()=>{
-                    this.updateFields(service, serviceId, 'Edit Service', service.url)
-                })
+            firebaseDB.ref(`reviews/${reviewId}`).once('value').then((snapshot) => {
+                const review = snapshot.val();
+                console.log(review)
             }).catch( e => {
                 console.log(e)
             })
         }
-    }
-
-    resetImage(){
-        const newFormData = {...this.state.formdata}
-        newFormData['image'].value = '';
-        newFormData['image'].valid = false;
-        this.setState({
-            defaultImg: '',
-            formdata: newFormData
-        })
-    }
-
-    storeFilename(filename){
-        this.updateForm({id:'image'}, filename)
     }
 
     updateForm(element, content=""){
@@ -142,7 +90,7 @@ class AddEditServices extends Component {
             formError: false,
             formdata: newFormData
         })
-        //console.log(this.state.formdata.email.value)
+        console.log(this.state.formdata)
     }
 
     submitForm(event){
@@ -157,17 +105,17 @@ class AddEditServices extends Component {
         }
 
         if(formIsValid){
-            if(this.state.formType === 'Edit Service'){
-                firebaseDB.ref(`services/${this.state.serviceId}`)
+            if(this.state.formType === 'Edit Review'){
+                firebaseDB.ref(`reviews/${this.state.reviewId}`)
                 .update(dataToSubmit).then(()=>{
                     this.successForm('Updated Successfully')
                 }).catch((e)=>{
                     this.setState({formError: true})
-                    console.log('erroe', e)
+                    console.log('error', e)
                 })
             }else{
-                firebaseServices.push(dataToSubmit).then(()=>{
-                    this.props.history.push('/admin_services')
+                firebaseReviews.push(dataToSubmit).then(()=>{
+                    this.props.history.push('/admin_reviews')
                 }).catch((error)=>{
                     console.log('Error occured', error);
                     this.setState({formError: true})
@@ -193,31 +141,16 @@ class AddEditServices extends Component {
         return (
             <AdminLayout>
                 <div className="container">
-                    <div className="row admin_services">
+                    <div className="row admin_reviews">
                         <h2>
                             {this.state.formType}
                         </h2>
-                        <div className="add_service_form">
+                        <div className="add_review_form" style={{width: "100%"}}>
                             <form onSubmit={(event) => this.submitForm(event)}>
-
-                            <Fileuploader 
-                                dir="services"
-                                tag={"Services image"}
-                                defaultImg={this.state.defaultImg}
-                                defaultImgName = {this.state.formdata.image.value}
-                                resetImage = {() => this.resetImage()}
-                                filename={(filename) => this.storeFilename(filename)}
-                            />
 
                             <FormField 
                                 id={'name'}
                                 formData = {this.state.formdata.name}
-                                change={(element)=>this.updateForm(element)}
-                            />
-
-                            <FormField 
-                                id={'description'}
-                                formData = {this.state.formdata.description}
                                 change={(element)=>this.updateForm(element)}
                             />
 
@@ -234,6 +167,26 @@ class AddEditServices extends Component {
                                 </div>
                             </form>
                         </div>
+                        <p>Follow the following steps for adding reviews:</p>
+                        <ul>
+                            <li>Go to facebook page and then into reviews tab</li>
+                            <li>Then go the review you want to add click on three dots on right of the review</li>
+                            <li>Then click on <strong>embed</strong></li>
+                            <li>It takes yo to next page then again click on <strong>"Get Code"</strong> button</li>
+                            <li>Then a dialog box appears and click on IFrame tab at the top of dialog box</li>
+                            <li>Then copy only "src" part as shown below and enter into the above form</li>
+                            <div 
+                                className="adding_review_instructions"
+                                style={{
+                                    background: `url(${instructionImage}) no-repeat`,
+                                    width: "815px",
+                                    height: "500px",
+                                    margin: "10px"
+                                }}
+                            >
+                                
+                            </div>
+                        </ul>
                     </div>
                 </div>
             </AdminLayout>
@@ -241,4 +194,4 @@ class AddEditServices extends Component {
     }
 }
 
-export default withRouter(AddEditServices);
+export default withRouter(AddEditReviews);
