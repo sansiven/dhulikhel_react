@@ -191,7 +191,7 @@ h2, .second-heading{
     font-size: 50px;
     font-weight: 900;
     letter-spacing: 1px;
-    color: #0C749C;
+    color: #ffffff;
 }
 
 .main_text_subtitle {
@@ -938,6 +938,10 @@ figure.effect-apollo:hover p {
 .single-room-figure{
     max-width: 100%;
     display: inline-flex;
+}
+
+.single-room-figure img{
+    width: 100%;
 }
 
 .single-room-row .col-md-7{

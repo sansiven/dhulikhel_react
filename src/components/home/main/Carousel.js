@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import slide_one from '../../../resources/images/Dhulikhel-Boutique-entrance.jpg'
 import slide_two from '../../../resources/images/Dhulikhel-Boutique-reception.jpg'
-import slide_three from '../../../resources/images/Mountain-from-Dhulikhel-Boutique.jpg'
+/* import slide_three from '../../../resources/images/Mountain-from-Dhulikhel-Boutique.jpg' */
 
 const Carousel = () => {
 
@@ -21,7 +21,7 @@ const Carousel = () => {
                             }}
         >
             <Slider {...settings} >
-                <div>
+                {/* <div>
                     <div 
                         className="carousel_image"
                         style={{
@@ -29,7 +29,7 @@ const Carousel = () => {
                             height:`${window.innerHeight}px`,
                         }}
                     ></div>
-                </div>
+                </div> */}
                 <div>
                     <div 
                         className="carousel_image"
