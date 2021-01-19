@@ -37,6 +37,7 @@ const Carousel = () => {
                             background: `url(${slide_two}) center no-repeat`,
                             backgroundPosition: "center center",
                             height:`${window.innerHeight}px`,
+                            opacity: '0.7'
                         }}
                     ></div>
                 </div>
@@ -46,6 +47,7 @@ const Carousel = () => {
                         style={{
                             background: `url(${slide_one})`,
                             height:`${window.innerHeight}px`,
+                            opacity: '0.7'
                         }}
                     ></div>
                 </div>

@@ -38,7 +38,7 @@ class Navigation extends Component {
             <AppBar 
                 position="fixed"
                 style={{
-                    backgroundColor: this.state.headerTransparent ? "transparent" : "#252b30",
+                    backgroundColor: this.state.headerTransparent ? "transparent" : "#E28413",
                     boxShadow:"none",
                     padding: '0',
                     borderColor: '2px solid #70798c'/*dont know why used*/

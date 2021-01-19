@@ -4,9 +4,18 @@ import 'firebase/database';
 import 'firebase/storage';
 import 'firebase/auth'
 
+var firebaseConfig = {
+    apiKey: "AIzaSyCYZJKrKVwFmx1wUidZ6bWFufSEPxe5XJw",
+    authDomain: "dhulikhel-webapp.firebaseapp.com",
+    databaseURL: "https://dhulikhel-webapp.firebaseio.com",
+    projectId: "dhulikhel-webapp",
+    storageBucket: "dhulikhel-webapp.appspot.com",
+    messagingSenderId: "345545539561",
+    appId: "1:345545539561:web:f6f09c6ebf4511f007d578",
+    measurementId: "G-9MM73QZXVW"
+  };
 
-
-const firebaseConfig = {
+/* const firebaseConfig = {
     apiKey: "AIzaSyDV208EkhC7vVDe0X5L-2Lx8FCjqZQ55_E",
     authDomain: "dhulikhel-react.firebaseapp.com",
     databaseURL: "https://dhulikhel-react.firebaseio.com",
@@ -14,7 +23,7 @@ const firebaseConfig = {
     storageBucket: "dhulikhel-react.appspot.com",
     messagingSenderId: "412639242675",
     appId: "1:412639242675:web:6ba484293ca3bb2efc83c6"
-};
+}; */
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 

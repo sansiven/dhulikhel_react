@@ -73,39 +73,41 @@ class Reviews extends Component {
         }
 
         return (
-            <section id="review">
-                <div className="container">
-                    <Spin>
-                        <b className="quote-right"><i className="fa fa-quote-right"></i></b>
-                    </Spin>
-                    
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <h2 className="review-part-head">See what our guests say</h2>
-                        </div>
-                        <div id="myCarousel" class="carousel" style={{position:'relative', height: '400px', width:'100%'}}>
-                            <div className="reviews-slider" style={{overflow: 'hidden'}}>
-                                {!this.state.isLoading ? 
-                                    <Slider {...settings} >
-                                        {this.state.fb_reviews.map((item, i) => (
-                                            <div key={i} className="item">
-                                                <iframe 
-                                                    title={item.id}
-                                                    src={item.name} 
-                                                    width="500"
-                                                    height="500"
-                                                    style={{border:'none',overflow:'hidden'}} 
-                                                    scrolling="no" 
-                                                    frameBorder="0" 
-                                                    /* allowTransparency="true"  */
-                                                >
-                                                </iframe> 
-                                            </div>
-                                        ))}
-                                    </Slider>
-                                    :<p>hey hey</p>
-                                }
-                                
+            <section id="review-section">
+                <div id="review">
+                    <div className="container">
+                        <Spin>
+                            <b className="quote-right"><i className="fa fa-quote-right"></i></b>
+                        </Spin>
+                        
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <h2 className="review-part-head">See what our guests say</h2>
+                            </div>
+                            <div id="myCarousel" className="carousel" style={{position:'relative', height: '400px', width:'100%'}}>
+                                <div className="reviews-slider" style={{overflow: 'hidden'}}>
+                                    {!this.state.isLoading ? 
+                                        <Slider {...settings} >
+                                            {this.state.fb_reviews.map((item, i) => (
+                                                <div key={i} className="item">
+                                                    <iframe 
+                                                        title={item.id}
+                                                        src={item.name} 
+                                                        width="500"
+                                                        height="500"
+                                                        style={{border:'none',overflow:'hidden'}} 
+                                                        scrolling="no" 
+                                                        frameBorder="0" 
+                                                        /* allowTransparency="true"  */
+                                                    >
+                                                    </iframe> 
+                                                </div>
+                                            ))}
+                                        </Slider>
+                                        :<p>hey hey</p>
+                                    }
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>

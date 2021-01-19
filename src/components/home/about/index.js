@@ -61,7 +61,7 @@ class About extends Component {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                                <img src={aboutImage} alt="about" style={{borderRadius: '5px'}}></img>
+                                <img src={aboutImage} alt="about" style={{borderRadius: '5px', width:'inherit'}}></img>
                             </div>
                         </Slide>
                 </div>

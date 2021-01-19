@@ -37,8 +37,15 @@ class ButtonAppBarCollapse extends Component {
 
         return (
             <div className={classes.buttonCollapse}>
-                <IconButton onClick={(event) => this.handleMenu(event)}>
-                    <MenuIcon />
+                <IconButton 
+                    style={{
+                        backgroundColor: this.state.headerTransparent ? "transparent" : "#E28413",
+                        outline:'none',
+                        color:'#09779A'
+                    }}
+                    onClick={(event) => this.handleMenu(event)}>
+                        
+                        <MenuIcon />
                 </IconButton>
                 <Menu
                     id="menu-appbar"

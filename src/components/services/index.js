@@ -55,7 +55,7 @@ class Services extends Component {
                             this.state.services.map((service, i) => {
                                 if(i % 2 === 0){
                                     return (
-                                        <div className="row service-single-item" key={i}>
+                                        <div className="row service-single-item" style={{width :'100%'}} key={i}>
                                             <div className="white-bg">
                                                 <div className="item">
                                                     <figure className="col-lg-5 col-sm-4">
