@@ -4,7 +4,8 @@ import { firebase, firebaseRooms } from '../../firebase'
 import { firebaseLooper } from '../ui/misc'; 
 import RoomCard from './RoomCard.js';
 import Tariff from './Tariff';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
+import {Helmet} from 'react-helmet'
 
 class Accomodation extends Component {
 
@@ -44,6 +45,13 @@ class Accomodation extends Component {
     render() {
         return (
             <div className="accomodation-container container">
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Accomodation | Dhulikhel Boutique Hotel | Best Boutique Hotel in Dhulikhel, Nepal</title>
+                    <meta name="description" content="Dhulikhel Boutique Hotel situated just a km outside of dhulikhel buspark,provides a unique and beautiful experience of your stay. Contact us to get this experience." />
+                    <link rel="icon" href="%PUBLIC_URL%/new-logo.jpg" />
+                    <link rel="canonical" href="http://dhulikhelboutiquehotel.com/" />
+                </Helmet>
                 <div className="accomodation-heading">
                     <h2 className="second-heading">Accomodation</h2>
                     <hr class="service-line"/>

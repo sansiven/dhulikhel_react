@@ -1,6 +1,7 @@
 :root {
     --yellow: #7DBA28 !important;
-    --green: #378B34 !important;
+    --first-green: #378B34 !important;
+    --green: #306B34 !important;
     --white: #fffaff !important;
     --first-blue:#0C749C !important;
     --blue: #09779A !important; /*Heading-text color*/
@@ -200,7 +201,7 @@ h2, .second-heading{
     position: absolute;
     color: #f59236;
     font-family: 'lato', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: bolder;
     margin-top: 15em;
@@ -215,7 +216,7 @@ h2, .second-heading{
 
 .book_now_btn {
     font-family: 'lato', sans-serif;
-    margin-top: 15em;
+    margin-top: 18em;
     padding-top: 50px;
 }
 
@@ -987,6 +988,7 @@ figure.effect-apollo:hover p {
         font-size: 25px;
     }
     .main_text_subtitle {
+        font-size: 14px; 
         margin-top: 20em;
     }
 

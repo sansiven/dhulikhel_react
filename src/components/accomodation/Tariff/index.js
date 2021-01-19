@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { firebaseTariffs } from '../../../firebase';
 import { firebaseLooper } from '../../ui/misc';
+import {Helmet} from 'react-helmet';
 
 
 class Tariff extends Component {
@@ -34,6 +35,13 @@ class Tariff extends Component {
     render() {
         return (
             <div className="tariff-row row">
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Tariff | Dhulikhel Boutique Hotel | Best Boutique Hotel in Dhulikhel, Nepal</title>
+                    <meta name="description" content="Dhulikhel Boutique Hotel situated just a km outside of dhulikhel buspark,provides a unique and beautiful experience of your stay. Contact us to get this experience." />
+                    <link rel="icon" href="%PUBLIC_URL%/new-logo.jpg" />
+                    <link rel="canonical" href="http://dhulikhelboutiquehotel.com/" />
+                </Helmet>
                 <TableContainer component={Paper}>
                     <Table>
                         <TableHead>

@@ -3,6 +3,7 @@ import { firebaseGallery, firebase } from '../../firebase';
 import {firebaseLooper} from '../ui/misc'
 import {Promise} from 'core-js';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import {Helmet} from 'react-helmet'
 
 class Gallery extends Component {
 
@@ -72,6 +73,13 @@ class Gallery extends Component {
         console.log(this.state)
         return (
             <div className="gallery-container">
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Gallery | Dhulikhel Boutique Hotel | Best Boutique Hotel in Dhulikhel, Nepal</title>
+                    <meta name="description" content="Dhulikhel Boutique Hotel situated just a km outside of dhulikhel buspark,provides a unique and beautiful experience of your stay. Contact us to get this experience." />
+                    <link rel="icon" href="%PUBLIC_URL%/new-logo.jpg" />
+                    <link rel="canonical" href="http://dhulikhelboutiquehotel.com/" />
+                </Helmet>
                 <div className="container">
                     <div className="row row-first">
                         <h2 className="second-heading">Gallery</h2>
