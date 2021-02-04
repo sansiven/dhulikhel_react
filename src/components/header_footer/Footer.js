@@ -1,5 +1,6 @@
 import React from 'react';
 import {HotelLogo} from '../ui/Logo';
+import {WhiteHotelLogo} from '../ui/whiteLogo';
 import NewsLetter from './newsletter';
 import Zoom from 'react-reveal/Zoom';
 import Trip from '../../resources/images/trip.png';
@@ -33,7 +34,7 @@ const Footer = () => {
                     </Zoom>
                 </div>
                 <div className="middle col-md">
-                    <HotelLogo 
+                    <WhiteHotelLogo
                         width="250px"
                         height="120px"
                         bckSize="170px"
@@ -45,7 +46,7 @@ const Footer = () => {
                     <div className="connect-div">
                         
                         <div className="row connect-row">
-                           
+                        
                                 <div className="booking-sites">
                                     <ul className="booking-links">
                                         <li className="booking">

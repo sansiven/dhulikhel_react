@@ -4,6 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import AppBarCollapse from "./AppBarCollapse";
 import {HotelLogo} from '../../ui/Logo';
+import {WhiteHotelLogo} from '../../ui/whiteLogo';
 
 
 class Navigation extends Component {
@@ -38,7 +39,7 @@ class Navigation extends Component {
             <AppBar 
                 position="fixed"
                 style={{
-                    backgroundColor: this.state.headerTransparent ? "transparent" : "#E28413",
+                    backgroundColor: this.state.headerTransparent ? "transparent" : "#09779A",
                     boxShadow:"none",
                     padding: '0',
                     borderColor: '2px solid #70798c'/*dont know why used*/
@@ -56,13 +57,30 @@ class Navigation extends Component {
                     >
                         <div style={{flexGrow:1}}>
                             <div className="logo">
-                                <HotelLogo
+                                {console.log(this.props.forLogo)}
+                                {this.state.headerTransparent ?
+                                    <HotelLogo
+                                        link={true}
+                                        linkTo="/"
+                                        width ="80px"
+                                        height="80px" 
+                                        bckSize= "80px"
+                                    /> 
+                                    : <WhiteHotelLogo
+                                        link={true}
+                                        linkTo="/"
+                                        width ="80px"
+                                        height="80px" 
+                                        bckSize= "80px"
+                                    />
+                                }
+                                {/* <WhiteHotelLogo
                                     link={true}
                                     linkTo="/"
                                     width ="80px"
                                     height="80px" 
                                     bckSize= "80px"
-                                />
+                                /> */}
                             </div>
                         </div>
                     </Typography>

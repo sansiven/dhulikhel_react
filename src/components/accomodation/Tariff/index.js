@@ -68,12 +68,12 @@ class Tariff extends Component {
                 <div className="room-capacity">
                     <p className="table-footer" style={{width: "100%"}}>*(Prices are subjected to VAT)</p>
                     <br/>
-                    <div className="room-capacity-container" style={{width:"100%"}}>
+                    {/* <div className="room-capacity-container" style={{width:"100%"}}>
                         <strong>Room capacity:</strong>
                         <span>2p X 2 rooms</span>
                         <span>3p X 5 rooms</span>
                         <span>4p X 1 rooms</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );

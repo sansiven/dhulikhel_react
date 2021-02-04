@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from  'react-router-dom';
 
-import hotelLogo from '../../resources/images/dhulikhel-boutique-logo.png';
-/* import hotelLogo from '../../resources/images/dhulikhel-boutique-logo-white.png'; */
+/* import hotelLogo from '../../resources/images/dhulikhel-boutique-logo.png'; */
+import hotelLogo from '../../resources/images/dhulikhel-boutique-logo-white.png';
 
 
-export const HotelLogo = (props) => {
+export const WhiteHotelLogo = (props) => {
     
     const template = <div
         className="img_cover"

@@ -10,7 +10,7 @@ class Home extends Component {
             
             <div className="hey">
                 {/* <React.Fragment> */}
-                <Main />
+                <Main/>
                 <About/>
                 <Reviews />
                 <h2 className="contact-header">Let's Connect</h2>

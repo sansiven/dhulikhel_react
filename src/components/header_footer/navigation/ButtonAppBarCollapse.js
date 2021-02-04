@@ -39,7 +39,7 @@ class ButtonAppBarCollapse extends Component {
             <div className={classes.buttonCollapse}>
                 <IconButton 
                     style={{
-                        backgroundColor: this.state.headerTransparent ? "transparent" : "#E28413",
+                        backgroundColor: this.state.headerTransparent ? "transparent" : "#09779A",
                         outline:'none',
                         color:'#09779A'
                     }}
