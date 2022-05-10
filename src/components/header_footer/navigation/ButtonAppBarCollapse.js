@@ -41,7 +41,7 @@ class ButtonAppBarCollapse extends Component {
                     style={{
                         backgroundColor: this.state.headerTransparent ? "transparent" : "#09779A",
                         outline:'none',
-                        color:'#09779A'
+                        color:'#fff'
                     }}
                     onClick={(event) => this.handleMenu(event)}>
                         
